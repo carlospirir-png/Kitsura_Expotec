@@ -1,10 +1,8 @@
 
 package main;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
 public class FondoPanel extends JPanel{
     private Image imagen;
