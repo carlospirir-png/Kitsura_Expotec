@@ -3,7 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/D:/Imprimir/InterfacesKitsura/src/main/MenuPrincipal.java</file>
+=======
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaPrincipal.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaCarga.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaDificultad.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaImagenPerfil.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaInicio.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaCContra.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaTutorial.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaEstadisticas.java</file>
+            <file>file:/C:/Users/usuario/OneDrive/Documentos/NetBeansProjects/Kitsura_Expotec/src/Interfaces/PantallaPerfil.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
