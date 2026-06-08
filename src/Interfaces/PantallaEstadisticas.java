@@ -1,19 +1,8 @@
 package Interfaces;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.*;
 
 public class PantallaEstadisticas extends JFrame {
 
@@ -95,9 +84,9 @@ public class PantallaEstadisticas extends JFrame {
 
         modelo.addRow(
                 new Object[]{
-                    "wasa-insano.admin.67-skibidi",
+                    "Jugador_que_juega123 ",
                     "00:00:00",
-                    "50000000"
+                    "99999"
                 });
 
         tabla = new JTable(modelo);
@@ -122,11 +111,10 @@ public class PantallaEstadisticas extends JFrame {
         scrollTabla.setBounds(
                 120,
                 150,
-                900,
-                420);
+                1100,
+                570);
 
         fondo.add(scrollTabla);
-
 
         lblUltimaPartida = new JLabel(
                 "Última partida");
@@ -139,7 +127,7 @@ public class PantallaEstadisticas extends JFrame {
 
         lblUltimaPartida.setBounds(
                 120,
-                570,
+                740,
                 250,
                 50);
 
@@ -147,7 +135,7 @@ public class PantallaEstadisticas extends JFrame {
         fondo.add(lblUltimaPartida);
 
         txtUltimaPartida = new JTextField(
-                "Minijuego1");
+                " ");
 
         txtUltimaPartida.setFont(
                 new Font(
@@ -157,7 +145,7 @@ public class PantallaEstadisticas extends JFrame {
 
         txtUltimaPartida.setBounds(
                 120,
-                620,
+                790,
                 340,
                 50);
 
@@ -174,7 +162,7 @@ public class PantallaEstadisticas extends JFrame {
 
         lblGanadas.setBounds(
                 120,
-                670,
+                850,
                 400,
                 50);
 
@@ -193,12 +181,11 @@ public class PantallaEstadisticas extends JFrame {
 
         txtGanadas.setBounds(
                 120,
-                715,
+                900,
                 340,
                 50);
 
         fondo.add(txtGanadas);
-
 
         lblUltimaPuntuacion = new JLabel(
                 "Última puntuación");
@@ -211,7 +198,7 @@ public class PantallaEstadisticas extends JFrame {
 
         lblUltimaPuntuacion.setBounds(
                 850,
-                570,
+                740,
                 400,
                 50);
 
@@ -220,7 +207,7 @@ public class PantallaEstadisticas extends JFrame {
         fondo.add(lblUltimaPuntuacion);
 
         txtUltimaPuntuacion = new JTextField(
-                "2000000 pts");
+                "0 pts");
 
         txtUltimaPuntuacion.setFont(
                 new Font(
@@ -230,15 +217,11 @@ public class PantallaEstadisticas extends JFrame {
 
         txtUltimaPuntuacion.setBounds(
                 850,
-                620,
+                790,
                 340,
                 50);
 
         fondo.add(txtUltimaPuntuacion);
-
-        // =========================
-        // PUNTUACION TOTAL
-        // =========================
         lblPuntuacionTotal = new JLabel(
                 "Puntuación total");
 
@@ -250,16 +233,16 @@ public class PantallaEstadisticas extends JFrame {
 
         lblPuntuacionTotal.setBounds(
                 850,
-                670,
+                850,
                 340,
                 50);
 
-                lblPuntuacionTotal.setForeground(new Color(196, 221, 227));
-        
+        lblPuntuacionTotal.setForeground(new Color(196, 221, 227));
+
         fondo.add(lblPuntuacionTotal);
 
         txtPuntuacionTotal = new JTextField(
-                "999999999999 pts");
+                "9999 pts");
 
         txtPuntuacionTotal.setFont(
                 new Font(
@@ -269,7 +252,7 @@ public class PantallaEstadisticas extends JFrame {
 
         txtPuntuacionTotal.setBounds(
                 850,
-                710,
+                900,
                 340,
                 50);
 
@@ -285,8 +268,8 @@ public class PantallaEstadisticas extends JFrame {
                         40));
 
         btnVolver.setBounds(
-                540,
-                670,
+                1540,
+                900,
                 240,
                 50);
 
@@ -301,8 +284,8 @@ public class PantallaEstadisticas extends JFrame {
 
         Image mascotaEscalada
                 = mascotaIcon.getImage().getScaledInstance(
-                        500,
-                        550,
+                        650,
+                        650,
                         Image.SCALE_SMOOTH);
 
         lblMascota.setIcon(
@@ -310,15 +293,14 @@ public class PantallaEstadisticas extends JFrame {
                         mascotaEscalada));
 
         lblMascota.setBounds(
-                1000,
-                70,
-                500,
-                550);
+                1200,
+                150,
+                650,
+                650);
 
         fondo.add(lblMascota);
-        
-        
-               panelFondo = new JPanel() {
+
+        panelFondo = new JPanel() {
 
             @Override
             protected void paintComponent(Graphics g) {
@@ -341,16 +323,12 @@ public class PantallaEstadisticas extends JFrame {
 
         panelFondo.setOpaque(false);
         panelFondo.setLayout(null);
-        panelFondo.setBounds(120, 30, 900, 540);
+        panelFondo.setBounds(120, 30, 1100, 540);
 
         fondo.add(panelFondo);
-        
-        
 
     }
 
-    
-    
     public static void main(String[] args) {
 
         new PantallaEstadisticas();

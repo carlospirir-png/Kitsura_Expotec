@@ -23,7 +23,7 @@ public class PantallaInicio extends JFrame {
         setContentPane(fondo);
 
         setTitle("Kitsura");
-        setSize(1366, 768);
+        setSize(1920, 1080);
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,31 +37,29 @@ public class PantallaInicio extends JFrame {
 
     private void crearComponentes() {
 
-
-
         panelDecoracion = new PanelDecoracion();
-        panelDecoracion.setBounds(330, 0, 700, 700);
+        panelDecoracion.setBounds(590, 0, 700, 700);
 
         fondo.add(panelDecoracion);
 
-        FondoPanelSemi panelFrase =
-        new FondoPanelSemi(
-                new Color(0, 0, 0, 140));
+        FondoPanelSemi panelFrase
+                = new FondoPanelSemi(
+                        new Color(0, 0, 0, 140));
 
-panelFrase.setBounds(280, 620, 800, 70);
-panelFrase.setLayout(null);
+        panelFrase.setBounds(550, 690, 800, 70);
+        panelFrase.setLayout(null);
 
-fondo.add(panelFrase);
+        fondo.add(panelFrase);
 
         lblLogo = new JLabel();
 
-        ImageIcon logoIcon =
-                new ImageIcon(
+        ImageIcon logoIcon
+                = new ImageIcon(
                         getClass().getResource(
                                 "/img/logoKitsura3.png"));
 
-        Image logoEscalado =
-                logoIcon.getImage().getScaledInstance(
+        Image logoEscalado
+                = logoIcon.getImage().getScaledInstance(
                         570,
                         600,
                         Image.SCALE_SMOOTH);
@@ -69,16 +67,14 @@ fondo.add(panelFrase);
         lblLogo.setIcon(new ImageIcon(logoEscalado));
 
         lblLogo.setBounds(
-                400,
+                650,
                 100,
                 570,
                 600);
 
         fondo.add(lblLogo);
 
-        // Forzar que el logo quede encima
         fondo.setComponentZOrder(lblLogo, 0);
-
 
         lblFrase = new JLabel(
                 "\"No es magia, es mente\"",
@@ -90,11 +86,11 @@ fondo.add(panelFrase);
                         Font.BOLD,
                         40));
 
-lblFrase.setForeground(new Color(196, 221, 227));
+        lblFrase.setForeground(new Color(196, 221, 227));
 
         lblFrase.setBounds(
-                250,
-                620,
+                530,
+                690,
                 850,
                 60);
 

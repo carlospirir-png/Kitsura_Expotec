@@ -22,6 +22,7 @@ public class PantallaDificultad extends JFrame {
     private JLabel lblEmpieza;
     private JLabel lblContador;
     private JLabel lblAlerta;
+    private JLabel lblFlecha;
 
     private int tiempo = 3;
 
@@ -46,7 +47,6 @@ public class PantallaDificultad extends JFrame {
 
     private void crearComponentes() {
 
-
         JLabel mascota = new JLabel();
 
         ImageIcon mascotaIcon
@@ -54,13 +54,12 @@ public class PantallaDificultad extends JFrame {
 
         Image mascotaEscalada
                 = mascotaIcon.getImage().getScaledInstance(
-                        550, 550, Image.SCALE_SMOOTH);
+                        650, 650, Image.SCALE_SMOOTH);
 
         mascota.setIcon(new ImageIcon(mascotaEscalada));
-        mascota.setBounds(200, 200, 550, 550);
+        mascota.setBounds(200, 200, 650, 650);
 
         fondo.add(mascota);
-
 
         panelTexto = new JPanel() {
 
@@ -78,10 +77,23 @@ public class PantallaDificultad extends JFrame {
 
         panelTexto.setOpaque(false);
         panelTexto.setLayout(null);
-        panelTexto.setBounds(750, 150, 700, 550);
+        panelTexto.setBounds(850, 150, 900, 750);
 
         fondo.add(panelTexto);
 
+        lblFlecha = new JLabel();
+
+        ImageIcon flechaicon
+                = new ImageIcon(getClass().getResource("/img/FlechaAvanzar.png"));
+
+        Image flechaEscalada
+                = flechaicon.getImage().getScaledInstance(
+                        300, 200, Image.SCALE_SMOOTH);
+
+        lblFlecha.setIcon(new ImageIcon(flechaEscalada));
+        lblFlecha.setBounds(320, 440, 300, 200);
+        lblFlecha.setVisible(false);
+        panelTexto.add(lblFlecha);
 
         lblAlerta = new JLabel();
 
@@ -90,48 +102,45 @@ public class PantallaDificultad extends JFrame {
 
         Image alertaEscalada
                 = alertaIcon.getImage().getScaledInstance(
-                        100, 100, Image.SCALE_SMOOTH);
+                        200, 200, Image.SCALE_SMOOTH);
 
         lblAlerta.setIcon(new ImageIcon(alertaEscalada));
-        lblAlerta.setBounds(300, 20, 100, 100);
+        lblAlerta.setBounds(350, 50, 200, 200);
 
         panelTexto.add(lblAlerta);
 
-
         lblTitulo = new JLabel("¡ALERTA!", SwingConstants.CENTER);
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 50));
+        lblTitulo.setFont(new Font("Arial", Font.BOLD, 60));
         lblTitulo.setForeground(Color.WHITE);
-        lblTitulo.setBounds(150, 130, 400, 60);
+        lblTitulo.setBounds(270, 330, 400, 60);
 
         panelTexto.add(lblTitulo);
-
 
         lblMensaje = new JLabel(
                 "Se aumenta la dificultad",
                 SwingConstants.CENTER);
 
-        lblMensaje.setFont(new Font("Arial", Font.BOLD, 30));
+        lblMensaje.setFont(new Font("Arial", Font.BOLD, 40));
         lblMensaje.setForeground(Color.WHITE);
-        lblMensaje.setBounds(70, 230, 550, 50);
+        lblMensaje.setBounds(205, 430, 550, 50);
 
         panelTexto.add(lblMensaje);
-
 
         lblEmpieza = new JLabel(
                 "Empieza en:",
                 SwingConstants.CENTER);
 
-        lblEmpieza.setFont(new Font("Arial", Font.BOLD, 30));
+        lblEmpieza.setFont(new Font("Arial", Font.BOLD, 40));
         lblEmpieza.setForeground(Color.WHITE);
-        lblEmpieza.setBounds(150, 320, 400, 50);
+        lblEmpieza.setBounds(270, 520, 400, 50);
 
         panelTexto.add(lblEmpieza);
 
         // CONTADOR
         lblContador = new JLabel("(3s)", SwingConstants.CENTER);
-        lblContador.setFont(new Font("Arial", Font.BOLD, 50));
+        lblContador.setFont(new Font("Arial", Font.BOLD, 60));
         lblContador.setForeground(Color.WHITE);
-        lblContador.setBounds(200, 400, 300, 70);
+        lblContador.setBounds(320, 600, 300, 70);
 
         panelTexto.add(lblContador);
     }
@@ -164,15 +173,16 @@ public class PantallaDificultad extends JFrame {
     private void mostrarNuevaDificultad() {
 
         lblAlerta.setVisible(false);
+        lblFlecha.setVisible(true);
 
         lblTitulo.setText("DIFICULTAD AUMENTADA");
-        lblTitulo.setBounds(5, 130, 700, 60);
+        lblTitulo.setBounds(5, 130, 900, 60);
 
         lblMensaje.setText("El nivel ha aumentado");
-        lblMensaje.setBounds(45, 230, 600, 50);
+        lblMensaje.setBounds(150, 250, 600, 60);
 
         lblEmpieza.setText("¡Continúa jugando!");
-        lblEmpieza.setBounds(85, 320, 500, 50);
+        lblEmpieza.setBounds(205, 350, 500, 60);
 
         lblContador.setText("");
 
