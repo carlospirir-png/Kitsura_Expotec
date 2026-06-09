@@ -20,7 +20,6 @@ public class UsuarioMenu extends JFrame {
 
     private JLabel lblTitulo;
 
-
     private JButton btnAgregarAdmin;
     private JButton btnEditar;
     private JButton btnMostrar;
@@ -47,6 +46,7 @@ public class UsuarioMenu extends JFrame {
 
     private void crearComponentes() {
 
+
         panelSemi = new JPanel() {
 
             @Override
@@ -56,7 +56,7 @@ public class UsuarioMenu extends JFrame {
 
                 Graphics2D g2 = (Graphics2D) g.create();
 
-                g2.setColor(new Color(0, 0, 0, 110));
+                g2.setColor(new Color(0, 0, 0, 120));
 
                 g2.fillRoundRect(
                         0,
@@ -74,10 +74,10 @@ public class UsuarioMenu extends JFrame {
         panelSemi.setLayout(null);
 
         panelSemi.setBounds(
-                80,
-                80,
-                900,
-                820);
+                120,
+                90,
+                1000,
+                850);
 
         fondo.add(panelSemi);
 
@@ -90,16 +90,16 @@ public class UsuarioMenu extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        45));
+                        56));
 
         lblTitulo.setForeground(
                 Color.WHITE);
 
         lblTitulo.setBounds(
                 250,
-                40,
-                400,
-                60);
+                50,
+                500,
+                70);
 
         panelSemi.add(lblTitulo);
 
@@ -111,13 +111,13 @@ public class UsuarioMenu extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        24));
+                        30));
 
         btnAgregarAdmin.setBounds(
-                180,
-                300,
-                420,
-                70);
+                250,
+                250,
+                500,
+                85);
 
         panelSemi.add(btnAgregarAdmin);
 
@@ -129,13 +129,13 @@ public class UsuarioMenu extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        24));
+                        30));
 
         btnEditar.setBounds(
-                180,
-                470,
                 250,
-                70);
+                430,
+                320,
+                85);
 
         panelSemi.add(btnEditar);
 
@@ -147,15 +147,16 @@ public class UsuarioMenu extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        24));
+                        30));
 
         btnMostrar.setBounds(
-                180,
-                640,
                 250,
-                70);
+                610,
+                320,
+                85);
 
         panelSemi.add(btnMostrar);
+
 
         lblMascota = new JLabel();
 
@@ -166,8 +167,8 @@ public class UsuarioMenu extends JFrame {
 
         Image mascotaEscalada =
                 mascotaIcon.getImage().getScaledInstance(
-                        700,
-                        700,
+                        850,
+                        850,
                         Image.SCALE_SMOOTH);
 
         lblMascota.setIcon(
@@ -175,10 +176,10 @@ public class UsuarioMenu extends JFrame {
                         mascotaEscalada));
 
         lblMascota.setBounds(
-                1120,
-                180,
-                700,
-                700);
+                1050,
+                100,
+                850,
+                850);
 
         fondo.add(lblMascota);
     }

@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 public class UsuarioMostrar extends JFrame {
 
@@ -56,9 +56,6 @@ public class UsuarioMostrar extends JFrame {
 
     private void crearComponentes() {
 
-        // =========================
-        // PANEL IZQUIERDO
-        // =========================
 
         panelIzquierdo = new JPanel() {
 
@@ -69,7 +66,7 @@ public class UsuarioMostrar extends JFrame {
 
                 Graphics2D g2 = (Graphics2D) g.create();
 
-                g2.setColor(new Color(0, 0, 0, 110));
+                g2.setColor(new Color(0, 0, 0, 120));
 
                 g2.fillRoundRect(
                         0,
@@ -88,57 +85,45 @@ public class UsuarioMostrar extends JFrame {
 
         panelIzquierdo.setBounds(
                 60,
-                80,
-                650,
-                850);
+                70,
+                720,
+                900);
 
         fondo.add(panelIzquierdo);
 
-        // =========================
-        // BOTON ELIMINAR
-        // =========================
 
-        btnEliminar = new JButton(
-                "ELIMINAR");
+        btnEliminar = new JButton("ELIMINAR");
 
         btnEliminar.setFont(
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        22));
+                        28));
 
         btnEliminar.setBounds(
+                60,
                 50,
-                40,
-                220,
-                70);
+                250,
+                75);
 
         panelIzquierdo.add(btnEliminar);
 
-        // =========================
-        // BOTON BUSCAR
-        // =========================
 
-        btnBuscar = new JButton(
-                "BUSCAR");
+        btnBuscar = new JButton("BUSCAR");
 
         btnBuscar.setFont(
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        22));
+                        28));
 
         btnBuscar.setBounds(
-                340,
-                40,
-                220,
-                70);
+                390,
+                50,
+                250,
+                75);
 
         panelIzquierdo.add(btnBuscar);
-
-        // =========================
-        // LABEL ID
-        // =========================
 
         lblID = new JLabel(
                 "Ingrese el ID del usuario:");
@@ -147,22 +132,18 @@ public class UsuarioMostrar extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        28));
+                        32));
 
-        lblID.setForeground(
-                Color.WHITE);
+        lblID.setForeground(Color.WHITE);
 
         lblID.setBounds(
-                50,
-                170,
-                400,
-                40);
+                60,
+                190,
+                500,
+                45);
 
         panelIzquierdo.add(lblID);
 
-        // =========================
-        // TEXTFIELD
-        // =========================
 
         txtID = new JTextField();
 
@@ -170,19 +151,16 @@ public class UsuarioMostrar extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        24));
+                        28));
 
         txtID.setBounds(
-                50,
-                230,
-                510,
-                55);
+                60,
+                255,
+                580,
+                65);
 
         panelIzquierdo.add(txtID);
 
-        // =========================
-        // MASCOTA
-        // =========================
 
         lblMascota = new JLabel();
 
@@ -193,8 +171,8 @@ public class UsuarioMostrar extends JFrame {
 
         Image mascotaEscalada =
                 mascotaIcon.getImage().getScaledInstance(
-                        420,
-                        420,
+                        520,
+                        520,
                         Image.SCALE_SMOOTH);
 
         lblMascota.setIcon(
@@ -202,16 +180,12 @@ public class UsuarioMostrar extends JFrame {
                         mascotaEscalada));
 
         lblMascota.setBounds(
-                90,
-                340,
-                420,
-                420);
+                100,
+                360,
+                520,
+                520);
 
         panelIzquierdo.add(lblMascota);
-
-        // =========================
-        // PANEL TABLA
-        // =========================
 
         panelTabla = new JPanel() {
 
@@ -222,7 +196,7 @@ public class UsuarioMostrar extends JFrame {
 
                 Graphics2D g2 = (Graphics2D) g.create();
 
-                g2.setColor(new Color(0, 0, 0, 110));
+                g2.setColor(new Color(0, 0, 0, 120));
 
                 g2.fillRoundRect(
                         0,
@@ -240,16 +214,12 @@ public class UsuarioMostrar extends JFrame {
         panelTabla.setLayout(null);
 
         panelTabla.setBounds(
-                780,
-                80,
-                1050,
-                850);
+                830,
+                70,
+                1040,
+                900);
 
         fondo.add(panelTabla);
-
-        // =========================
-        // TITULO
-        // =========================
 
         lblTitulo = new JLabel(
                 "USUARIOS",
@@ -259,22 +229,18 @@ public class UsuarioMostrar extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        42));
+                        52));
 
         lblTitulo.setForeground(
                 Color.WHITE);
 
         lblTitulo.setBounds(
-                250,
+                220,
                 30,
-                500,
-                50);
+                600,
+                60);
 
         panelTabla.add(lblTitulo);
-
-        // =========================
-        // TABLA
-        // =========================
 
         String[] columnas = {
             "ID",
@@ -286,34 +252,34 @@ public class UsuarioMostrar extends JFrame {
         DefaultTableModel modelo =
                 new DefaultTableModel(
                         columnas,
-                        5);
+                        10);
 
         tablaUsuarios =
                 new JTable(modelo);
 
-        tablaUsuarios.setRowHeight(70);
+        tablaUsuarios.setRowHeight(75);
 
         tablaUsuarios.setFont(
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        20));
+                        22));
 
         tablaUsuarios.getTableHeader().setFont(
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        20));
+                        24));
 
         scrollTabla =
                 new JScrollPane(
                         tablaUsuarios);
 
         scrollTabla.setBounds(
-                40,
+                30,
                 120,
-                960,
-                650);
+                980,
+                730);
 
         panelTabla.add(scrollTabla);
     }

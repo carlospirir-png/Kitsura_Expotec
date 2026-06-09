@@ -54,9 +54,6 @@ public class NuevoAdmin extends JFrame {
 
     private void crearComponentes() {
 
-        // =========================
-        // PANEL SEMITRANSPARENTE
-        // =========================
 
         panelSemi = new JPanel() {
 
@@ -67,7 +64,7 @@ public class NuevoAdmin extends JFrame {
 
                 Graphics2D g2 = (Graphics2D) g.create();
 
-                g2.setColor(new Color(0, 0, 0, 110));
+                g2.setColor(new Color(0, 0, 0, 120));
 
                 g2.fillRoundRect(
                         0,
@@ -86,15 +83,12 @@ public class NuevoAdmin extends JFrame {
 
         panelSemi.setBounds(
                 120,
-                120,
-                850,
-                720);
+                100,
+                1000,
+                800);
 
         fondo.add(panelSemi);
 
-        // =========================
-        // TITULO
-        // =========================
 
         lblTitulo = new JLabel(
                 "AÑADIR ADMINISTRADOR",
@@ -104,22 +98,19 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        42));
+                        52));
 
         lblTitulo.setForeground(
                 Color.WHITE);
 
         lblTitulo.setBounds(
-                100,
+                50,
                 40,
-                650,
-                60);
+                900,
+                70);
 
         panelSemi.add(lblTitulo);
 
-        // =========================
-        // NOMBRE
-        // =========================
 
         lblNombre = new JLabel(
                 "Ingrese el nombre del nuevo administrador:");
@@ -128,16 +119,16 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        28));
+                        32));
 
         lblNombre.setForeground(
                 Color.WHITE);
 
         lblNombre.setBounds(
-                60,
-                150,
-                600,
-                40);
+                70,
+                170,
+                700,
+                45);
 
         panelSemi.add(lblNombre);
 
@@ -147,19 +138,16 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        24));
+                        28));
 
         txtNombre.setBounds(
-                60,
-                210,
-                500,
-                55);
+                70,
+                235,
+                650,
+                65);
 
         panelSemi.add(txtNombre);
 
-        // =========================
-        // CORREO
-        // =========================
 
         lblCorreo = new JLabel(
                 "Ingrese el correo del nuevo administrador:");
@@ -168,16 +156,16 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        28));
+                        32));
 
         lblCorreo.setForeground(
                 Color.WHITE);
 
         lblCorreo.setBounds(
-                60,
-                340,
-                650,
-                40);
+                70,
+                370,
+                750,
+                45);
 
         panelSemi.add(lblCorreo);
 
@@ -187,19 +175,16 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        24));
+                        28));
 
         txtCorreo.setBounds(
-                60,
-                400,
-                500,
-                55);
+                70,
+                435,
+                650,
+                65);
 
         panelSemi.add(txtCorreo);
 
-        // =========================
-        // CONTRASEÑA
-        // =========================
 
         lblContra = new JLabel(
                 "Ingrese la contraseña del nuevo administrador:");
@@ -208,16 +193,16 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        28));
+                        32));
 
         lblContra.setForeground(
                 Color.WHITE);
 
         lblContra.setBounds(
-                60,
-                530,
-                700,
-                40);
+                70,
+                570,
+                800,
+                45);
 
         panelSemi.add(lblContra);
 
@@ -227,19 +212,15 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        24));
+                        28));
 
         txtContra.setBounds(
-                60,
-                590,
-                500,
-                55);
+                70,
+                635,
+                650,
+                65);
 
         panelSemi.add(txtContra);
-
-        // =========================
-        // BOTON AÑADIR
-        // =========================
 
         btnAnadir = new JButton(
                 "AÑADIR");
@@ -248,19 +229,16 @@ public class NuevoAdmin extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        26));
+                        30));
 
         btnAnadir.setBounds(
-                180,
-                670,
-                220,
-                65);
+                350,
+                730,
+                300,
+                70);
 
         panelSemi.add(btnAnadir);
 
-        // =========================
-        // MASCOTA
-        // =========================
 
         lblMascota = new JLabel();
 
@@ -271,8 +249,8 @@ public class NuevoAdmin extends JFrame {
 
         Image mascotaEscalada =
                 mascotaIcon.getImage().getScaledInstance(
-                        700,
-                        700,
+                        800,
+                        800,
                         Image.SCALE_SMOOTH);
 
         lblMascota.setIcon(
@@ -280,10 +258,10 @@ public class NuevoAdmin extends JFrame {
                         mascotaEscalada));
 
         lblMascota.setBounds(
-                1120,
-                180,
-                700,
-                700);
+                1080,
+                120,
+                800,
+                800);
 
         fondo.add(lblMascota);
     }

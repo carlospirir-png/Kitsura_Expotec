@@ -38,7 +38,8 @@ public class PantallaPrincipal extends JFrame {
         setContentPane(fondo);
 
         setTitle("Página Principal");
-        setSize(1366, 768);
+        setSize(1920, 1080);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -58,12 +59,23 @@ public class PantallaPrincipal extends JFrame {
                 getClass().getResource("/img/LogoKitsura2.png"));
 
         Image logoEscalado = logoIcon.getImage()
-                .getScaledInstance(300, 150, Image.SCALE_SMOOTH);
+                .getScaledInstance(
+                        450,
+                        220,
+                        Image.SCALE_SMOOTH);
 
-        lblLogo.setIcon(new ImageIcon(logoEscalado));
-        lblLogo.setBounds(120, 0, 300, 150);
+        lblLogo.setIcon(
+                new ImageIcon(
+                        logoEscalado));
+
+        lblLogo.setBounds(
+                80,
+                10,
+                450,
+                220);
 
         fondo.add(lblLogo);
+
 
         lblMascota = new JLabel();
 
@@ -71,12 +83,23 @@ public class PantallaPrincipal extends JFrame {
                 getClass().getResource("/img/ZorroPrincipal.png"));
 
         Image mascotaEscalada = mascotaIcon.getImage()
-                .getScaledInstance(550, 550, Image.SCALE_SMOOTH);
+                .getScaledInstance(
+                        750,
+                        750,
+                        Image.SCALE_SMOOTH);
 
-        lblMascota.setIcon(new ImageIcon(mascotaEscalada));
-        lblMascota.setBounds(50, 130, 550, 550);
+        lblMascota.setIcon(
+                new ImageIcon(
+                        mascotaEscalada));
+
+        lblMascota.setBounds(
+                40,
+                220,
+                750,
+                750);
 
         fondo.add(lblMascota);
+
 
         panelMenu = new JPanel() {
 
@@ -85,15 +108,20 @@ public class PantallaPrincipal extends JFrame {
 
                 Graphics2D g2 = (Graphics2D) g.create();
 
-                g2.setColor(new Color(0, 0, 0, 120));
+                g2.setColor(
+                        new Color(
+                                0,
+                                0,
+                                0,
+                                120));
 
                 g2.fillRoundRect(
                         0,
                         0,
                         getWidth(),
                         getHeight(),
-                        30,
-                        30);
+                        40,
+                        40);
 
                 g2.dispose();
             }
@@ -101,19 +129,35 @@ public class PantallaPrincipal extends JFrame {
 
         panelMenu.setOpaque(false);
         panelMenu.setLayout(null);
-        panelMenu.setBounds(500, 70, 700, 560);
+
+        panelMenu.setBounds(
+                850,
+                120,
+                900,
+                760);
 
         fondo.add(panelMenu);
 
 
         lblTitulo = new JLabel(
-                "Menú Principal",
+                "MENÚ PRINCIPAL",
                 SwingConstants.CENTER);
 
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 40));
-        lblTitulo.setForeground(Color.WHITE);
-        lblTitulo.setBounds(100, 30, 500, 60);
-        
+        lblTitulo.setFont(
+                new Font(
+                        "Arial",
+                        Font.BOLD,
+                        52));
+
+        lblTitulo.setForeground(
+                Color.WHITE);
+
+        lblTitulo.setBounds(
+                150,
+                40,
+                600,
+                70);
+
         panelMenu.add(lblTitulo);
 
 
@@ -123,16 +167,38 @@ public class PantallaPrincipal extends JFrame {
                 getClass().getResource("/img/Editar.png"));
 
         Image perfilEscalado = perfilIcon.getImage()
-                .getScaledInstance(55, 55, Image.SCALE_SMOOTH);
+                .getScaledInstance(
+                        75,
+                        75,
+                        Image.SCALE_SMOOTH);
 
-        lblIconPerfil.setIcon(new ImageIcon(perfilEscalado));
-        lblIconPerfil.setBounds(120, 130, 55, 55);
+        lblIconPerfil.setIcon(
+                new ImageIcon(
+                        perfilEscalado));
+
+        lblIconPerfil.setBounds(
+                120,
+                170,
+                75,
+                75);
 
         panelMenu.add(lblIconPerfil);
 
-        btnPerfil = new JButton("PERFIL");
-        btnPerfil.setFont(new Font("Arial", Font.BOLD, 24));
-        btnPerfil.setBounds(190, 120, 280, 70);
+
+        btnPerfil = new JButton(
+                "PERFIL");
+
+        btnPerfil.setFont(
+                new Font(
+                        "Arial",
+                        Font.BOLD,
+                        30));
+
+        btnPerfil.setBounds(
+                240,
+                165,
+                400,
+                85);
 
         panelMenu.add(btnPerfil);
 
@@ -143,19 +209,38 @@ public class PantallaPrincipal extends JFrame {
                 getClass().getResource("/img/Control.png"));
 
         Image juegoEscalado = juegoIcon.getImage()
-                .getScaledInstance(55, 55, Image.SCALE_SMOOTH);
+                .getScaledInstance(
+                        75,
+                        75,
+                        Image.SCALE_SMOOTH);
 
-        lblIconJuego.setIcon(new ImageIcon(juegoEscalado));
-        lblIconJuego.setBounds(120, 240, 55, 55);
+        lblIconJuego.setIcon(
+                new ImageIcon(
+                        juegoEscalado));
+
+        lblIconJuego.setBounds(
+                120,
+                300,
+                75,
+                75);
 
         panelMenu.add(lblIconJuego);
 
-        // ==========================
-        // BOTON MINIJUEGOS
-        // ==========================
-        btnMinijuegos = new JButton("MINIJUEGOS");
-        btnMinijuegos.setFont(new Font("Arial", Font.BOLD, 24));
-        btnMinijuegos.setBounds(190, 230, 280, 70);
+
+        btnMinijuegos = new JButton(
+                "MINIJUEGOS");
+
+        btnMinijuegos.setFont(
+                new Font(
+                        "Arial",
+                        Font.BOLD,
+                        30));
+
+        btnMinijuegos.setBounds(
+                240,
+                295,
+                400,
+                85);
 
         panelMenu.add(btnMinijuegos);
 
@@ -166,19 +251,38 @@ public class PantallaPrincipal extends JFrame {
                 getClass().getResource("/img/Estadisticas.png"));
 
         Image estadisticasEscalada = estadisticasIcon.getImage()
-                .getScaledInstance(55, 55, Image.SCALE_SMOOTH);
+                .getScaledInstance(
+                        75,
+                        75,
+                        Image.SCALE_SMOOTH);
 
         lblIconEstadisticas.setIcon(
-                new ImageIcon(estadisticasEscalada));
+                new ImageIcon(
+                        estadisticasEscalada));
 
-        lblIconEstadisticas.setBounds(120, 350, 55, 55);
+        lblIconEstadisticas.setBounds(
+                120,
+                430,
+                75,
+                75);
 
         panelMenu.add(lblIconEstadisticas);
 
 
-        btnEstadisticas = new JButton("ESTADÍSTICAS");
-        btnEstadisticas.setFont(new Font("Arial", Font.BOLD, 22));
-        btnEstadisticas.setBounds(190, 340, 280, 70);
+        btnEstadisticas = new JButton(
+                "ESTADÍSTICAS");
+
+        btnEstadisticas.setFont(
+                new Font(
+                        "Arial",
+                        Font.BOLD,
+                        28));
+
+        btnEstadisticas.setBounds(
+                240,
+                425,
+                400,
+                85);
 
         panelMenu.add(btnEstadisticas);
 
@@ -189,22 +293,43 @@ public class PantallaPrincipal extends JFrame {
                 getClass().getResource("/img/Salir.png"));
 
         Image salirEscalado = salirIcon.getImage()
-                .getScaledInstance(55, 55, Image.SCALE_SMOOTH);
+                .getScaledInstance(
+                        75,
+                        75,
+                        Image.SCALE_SMOOTH);
 
-        lblIconSalir.setIcon(new ImageIcon(salirEscalado));
-        lblIconSalir.setBounds(120, 460, 55, 55);
+        lblIconSalir.setIcon(
+                new ImageIcon(
+                        salirEscalado));
+
+        lblIconSalir.setBounds(
+                120,
+                560,
+                75,
+                75);
 
         panelMenu.add(lblIconSalir);
 
+        btnSalir = new JButton(
+                "SALIR");
 
-        btnSalir = new JButton("SALIR");
-        btnSalir.setFont(new Font("Arial", Font.BOLD, 24));
-        btnSalir.setBounds(190, 450, 280, 70);
+        btnSalir.setFont(
+                new Font(
+                        "Arial",
+                        Font.BOLD,
+                        30));
+
+        btnSalir.setBounds(
+                240,
+                555,
+                400,
+                85);
 
         panelMenu.add(btnSalir);
     }
 
     public static void main(String[] args) {
+
         new PantallaPrincipal();
     }
 }

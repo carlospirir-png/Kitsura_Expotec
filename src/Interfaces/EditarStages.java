@@ -45,7 +45,6 @@ public class EditarStages extends JFrame {
 
     private void crearComponentes() {
 
-
         panelSemi = new JPanel() {
 
             @Override
@@ -61,8 +60,8 @@ public class EditarStages extends JFrame {
                         0,
                         getWidth(),
                         getHeight(),
-                        30,
-                        30);
+                        40,
+                        40);
 
                 g2.dispose();
             }
@@ -70,14 +69,15 @@ public class EditarStages extends JFrame {
 
         panelSemi.setOpaque(false);
         panelSemi.setLayout(null);
+
+        // Panel más grande para Full HD
         panelSemi.setBounds(
                 180,
-                130,
-                850,
-                520);
+                180,
+                1000,
+                650);
 
         fondo.add(panelSemi);
-
 
         lblTitulo = new JLabel(
                 "EDITAR EXISTENTE",
@@ -87,20 +87,17 @@ public class EditarStages extends JFrame {
                 new Font(
                         "Arial",
                         Font.BOLD,
-                        40));
+                        52));
 
-        lblTitulo.setForeground(
-                Color.WHITE);
+        lblTitulo.setForeground(Color.WHITE);
 
         lblTitulo.setBounds(
                 0,
-                30,
-                850,
-                50);
+                40,
+                1000,
+                60);
 
         panelSemi.add(lblTitulo);
-
-
 
         lblID = new JLabel(
                 "Ingrese el ID del Stage a editar:");
@@ -109,19 +106,17 @@ public class EditarStages extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        28));
+                        34));
 
-        lblID.setForeground(
-                Color.WHITE);
+        lblID.setForeground(Color.WHITE);
 
         lblID.setBounds(
-                235,
-                200,
-                450,
-                40);
+                220,
+                240,
+                600,
+                45);
 
         panelSemi.add(lblID);
-
 
         txtID = new JTextField();
 
@@ -129,28 +124,27 @@ public class EditarStages extends JFrame {
                 new Font(
                         "Arial",
                         Font.PLAIN,
-                        24));
+                        30));
 
         txtID.setBounds(
-                170,
-                300,
-                500,
-                55);
+                200,
+                340,
+                600,
+                70);
 
         panelSemi.add(txtID);
 
-
         lblMascota = new JLabel();
 
-        ImageIcon mascotaIcon =
-                new ImageIcon(
+        ImageIcon mascotaIcon
+                = new ImageIcon(
                         getClass().getResource(
                                 "/img/ZorroPrincipal.png"));
 
-        Image mascotaEscalada =
-                mascotaIcon.getImage().getScaledInstance(
-                        650,
-                        650,
+        Image mascotaEscalada
+                = mascotaIcon.getImage().getScaledInstance(
+                        750,
+                        750,
                         Image.SCALE_SMOOTH);
 
         lblMascota.setIcon(
@@ -158,10 +152,10 @@ public class EditarStages extends JFrame {
                         mascotaEscalada));
 
         lblMascota.setBounds(
-                1120,
-                180,
-                650,
-                650);
+                1150,
+                140,
+                750,
+                750);
 
         fondo.add(lblMascota);
     }

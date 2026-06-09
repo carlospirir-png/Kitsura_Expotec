@@ -54,7 +54,7 @@ public class PantallaPerfil extends JFrame {
         setContentPane(fondo);
 
         setTitle("Gestión de Cuenta");
-        setSize(1366, 768);
+        setSize(1920, 1060);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -67,371 +67,415 @@ public class PantallaPerfil extends JFrame {
 
     private void crearComponentes() {
 
+    lblLogo = new JLabel();
 
-        lblLogo = new JLabel();
+    ImageIcon logoIcon
+            = new ImageIcon(
+                    getClass().getResource(
+                            "/img/logoKitsura.png"));
 
-        ImageIcon logoIcon
-                = new ImageIcon(
-                        getClass().getResource(
-                                "/img/logoKitsura.png"));
+    Image logoEscalado
+            = logoIcon.getImage().getScaledInstance(
+                    300,
+                    300,
+                    Image.SCALE_SMOOTH);
 
-        Image logoEscalado
-                = logoIcon.getImage().getScaledInstance(
-                        200,
-                        200,
-                        Image.SCALE_SMOOTH);
+    lblLogo.setIcon(new ImageIcon(logoEscalado));
 
-        lblLogo.setIcon(new ImageIcon(logoEscalado));
-        lblLogo.setBounds(40, 10, 200, 200);
+    lblLogo.setBounds(
+            80,
+            20,
+            300,
+            300);
 
-        fondo.add(lblLogo);
+    fondo.add(lblLogo);
 
-        lblMascota = new JLabel();
+    lblMascota = new JLabel();
 
-        ImageIcon mascotaIcon
-                = new ImageIcon(
-                        getClass().getResource(
-                                "/img/ZorroPerfil.png"));
+    ImageIcon mascotaIcon
+            = new ImageIcon(
+                    getClass().getResource(
+                            "/img/ZorroPerfil.png"));
 
-        Image mascotaEscalada
-                = mascotaIcon.getImage().getScaledInstance(
-                        300,
-                        300,
-                        Image.SCALE_SMOOTH);
+    Image mascotaEscalada
+            = mascotaIcon.getImage().getScaledInstance(
+                    450,
+                    450,
+                    Image.SCALE_SMOOTH);
 
-        lblMascota.setIcon(new ImageIcon(mascotaEscalada));
-        lblMascota.setBounds(540, 10, 300, 300);
+    lblMascota.setIcon(
+            new ImageIcon(
+                    mascotaEscalada));
 
-        fondo.add(lblMascota);
+    lblMascota.setBounds(
+            700,
+            30,
+            450,
+            450);
 
-        panelCuenta = new JPanel() {
+    fondo.add(lblMascota);
 
-            @Override
-            protected void paintComponent(Graphics g) {
+    panelCuenta = new JPanel() {
 
-                Graphics2D g2 = (Graphics2D) g.create();
+        @Override
+        protected void paintComponent(Graphics g) {
 
-                g2.setColor(new Color(220, 220, 220, 220));
+            Graphics2D g2 = (Graphics2D) g.create();
 
-                g2.fillRoundRect(
-                        0,
-                        0,
-                        getWidth(),
-                        getHeight(),
-                        25,
-                        25);
+            g2.setColor(new Color(220, 220, 220, 220));
 
-                g2.dispose();
-            }
-        };
+            g2.fillRoundRect(
+                    0,
+                    0,
+                    getWidth(),
+                    getHeight(),
+                    30,
+                    30);
 
-        panelCuenta.setOpaque(false);
-        panelCuenta.setLayout(null);
-        panelCuenta.setBounds(70, 190, 680, 350);
+            g2.dispose();
+        }
+    };
 
-        fondo.add(panelCuenta);
+    panelCuenta.setOpaque(false);
+    panelCuenta.setLayout(null);
 
-        lblTitulo = new JLabel("Gestión de Cuenta");
+    panelCuenta.setBounds(
+            80,
+            300,
+            950,
+            500);
 
-        lblTitulo.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        30));
+    fondo.add(panelCuenta);
 
-        lblTitulo.setBounds(
-                180,
-                30,
-                350,
-                40);
 
-        panelCuenta.add(lblTitulo);
+    lblTitulo = new JLabel(
+            "Gestión de Cuenta");
 
+    lblTitulo.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    40));
 
-        lblCorreo = new JLabel("Correo Electrónico");
+    lblTitulo.setBounds(
+            280,
+            30,
+            400,
+            50);
 
-        lblCorreo.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        18));
+    panelCuenta.add(lblTitulo);
 
-        lblCorreo.setBounds(
-                25,
-                110,
-                250,
-                30);
 
-        panelCuenta.add(lblCorreo);
+    lblCorreo = new JLabel(
+            "Correo Electrónico");
+
+    lblCorreo.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    24));
 
-        txtCorreo = new JTextField(
-                "usuario@correo.com");
+    lblCorreo.setBounds(
+            40,
+            120,
+            300,
+            40);
+
+    panelCuenta.add(lblCorreo);
+
+    txtCorreo = new JTextField(
+            "usuario@correo.com");
+
+    txtCorreo.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    20));
 
-        txtCorreo.setBounds(
-                25,
-                150,
-                300,
-                35);
+    txtCorreo.setBounds(
+            40,
+            170,
+            420,
+            50);
+
+    panelCuenta.add(txtCorreo);
+
+    lblEditarCorreo = new JLabel(
+            "Editar");
+
+    lblEditarCorreo.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    22));
+
+    lblEditarCorreo.setBounds(
+            480,
+            170,
+            100,
+            50);
 
-        panelCuenta.add(txtCorreo);
+    panelCuenta.add(lblEditarCorreo);
 
-        lblEditarCorreo = new JLabel("Editar");
 
-        lblEditarCorreo.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        18));
+    lblPassword = new JLabel(
+            "Contraseña");
+
+    lblPassword.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    24));
 
-        lblEditarCorreo.setBounds(
-                340,
-                150,
-                100,
-                35);
+    lblPassword.setBounds(
+            40,
+            270,
+            250,
+            40);
+
+    panelCuenta.add(lblPassword);
 
-        panelCuenta.add(lblEditarCorreo);
+    txtPassword = new JPasswordField(
+            "123456789");
 
+    txtPassword.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    20));
 
-        lblPassword = new JLabel("Contraseña");
+    txtPassword.setBounds(
+            40,
+            320,
+            420,
+            50);
 
-        lblPassword.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        18));
+    panelCuenta.add(txtPassword);
 
-        lblPassword.setBounds(
-                25,
-                210,
-                200,
-                30);
+    lblEditarPassword = new JLabel(
+            "Editar");
 
-        panelCuenta.add(lblPassword);
+    lblEditarPassword.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    22));
 
-        txtPassword = new JPasswordField(
-                "123456789");
+    lblEditarPassword.setBounds(
+            480,
+            320,
+            100,
+            50);
 
-        txtPassword.setBounds(
-                25,
-                250,
-                300,
-                35);
+    panelCuenta.add(lblEditarPassword);
 
-        panelCuenta.add(txtPassword);
 
-        lblEditarPassword = new JLabel("Editar");
+    lblIdUsuario = new JLabel(
+            "<html><b>ID Usuario</b><br>19503236</html>");
 
-        lblEditarPassword.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        18));
+    lblIdUsuario.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    22));
 
-        lblEditarPassword.setBounds(
-                340,
-                250,
-                100,
-                35);
+    lblIdUsuario.setBounds(
+            700,
+            150,
+            220,
+            100);
 
-        panelCuenta.add(lblEditarPassword);
+    panelCuenta.add(lblIdUsuario);
 
-        lblIdUsuario = new JLabel(
-                "<html><b>ID Usuario</b><br>19503236</html>");
+    lblFechaCreacion = new JLabel(
+            "<html><b>Fecha de creación</b><br>00/00/2026</html>");
 
-        lblIdUsuario.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        18));
+    lblFechaCreacion.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    22));
 
-        lblIdUsuario.setBounds(
-                500,
-                120,
-                150,
-                80);
+    lblFechaCreacion.setBounds(
+            700,
+            290,
+            250,
+            100);
 
-        panelCuenta.add(lblIdUsuario);
+    panelCuenta.add(lblFechaCreacion);
 
+    panelPerfil = new JPanel() {
 
-        lblFechaCreacion = new JLabel(
-                "<html><b>Fecha de creación</b><br>00/00/2026</html>");
+        @Override
+        protected void paintComponent(Graphics g) {
 
-        lblFechaCreacion.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        18));
+            Graphics2D g2 = (Graphics2D) g.create();
 
-        lblFechaCreacion.setBounds(
-                500,
-                220,
-                180,
-                80);
+            g2.setColor(new Color(220, 220, 220, 220));
 
-        panelCuenta.add(lblFechaCreacion);
+            g2.fillRoundRect(
+                    0,
+                    0,
+                    getWidth(),
+                    getHeight(),
+                    30,
+                    30);
 
-        panelPerfil = new JPanel() {
+            g2.dispose();
+        }
+    };
 
-            @Override
-            protected void paintComponent(Graphics g) {
+    panelPerfil.setOpaque(false);
+    panelPerfil.setLayout(null);
 
-                Graphics2D g2 = (Graphics2D) g.create();
+    panelPerfil.setBounds(
+            1180,
+            60,
+            650,
+            900);
 
-                g2.setColor(new Color(220, 220, 220, 220));
+    fondo.add(panelPerfil);
 
-                g2.fillRoundRect(
-                        0,
-                        0,
-                        getWidth(),
-                        getHeight(),
-                        25,
-                        25);
 
-                g2.dispose();
-            }
-        };
+    lblEstado = new JLabel(
+            "<html><b>Estado:</b> Activo</html>");
 
-        panelPerfil.setOpaque(false);
-        panelPerfil.setLayout(null);
-        panelPerfil.setBounds(940, 0, 450, 730);
+    lblEstado.setFont(
+            new Font(
+                    "Arial",
+                    Font.PLAIN,
+                    28));
 
-        fondo.add(panelPerfil);
+    lblEstado.setBounds(
+            210,
+            20,
+            300,
+            50);
 
+    panelPerfil.add(lblEstado);
 
-        lblEstado = new JLabel(
-                "<html><b>Estado:</b> Activo</html>");
 
-        lblEstado.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        22));
+    lblFotoPerfil = new JLabel();
 
-        lblEstado.setBounds(
-                145,
-                15,
-                300,
-                40);
+    ImageIcon fotoIcon
+            = new ImageIcon(
+                    getClass().getResource(
+                            "/img/Victoria.png"));
 
-        panelPerfil.add(lblEstado);
+    Image fotoEscalada
+            = fotoIcon.getImage().getScaledInstance(
+                    250,
+                    250,
+                    Image.SCALE_SMOOTH);
 
-        lblFotoPerfil = new JLabel();
+    lblFotoPerfil.setIcon(
+            new ImageIcon(
+                    fotoEscalada));
 
-        ImageIcon fotoIcon
-                = new ImageIcon(
-                        getClass().getResource(
-                                "/img/Victoria.png"));
+    lblFotoPerfil.setBounds(
+            190,
+            90,
+            250,
+            250);
 
-        Image fotoEscalada
-                = fotoIcon.getImage().getScaledInstance(
-                        180,
-                        180,
-                        Image.SCALE_SMOOTH);
+    lblFotoPerfil.setBorder(
+            BorderFactory.createLineBorder(
+                    Color.GRAY,
+                    4));
 
-        lblFotoPerfil.setIcon(
-                new ImageIcon(fotoEscalada));
+    panelPerfil.add(lblFotoPerfil);
 
-        lblFotoPerfil.setBounds(
-                128,
-                65,
-                180,
-                180);
 
-        lblFotoPerfil.setBorder(
-                BorderFactory.createLineBorder(
-                        Color.GRAY,
-                        4));
+    lblUsuario = new JLabel(
+            "Nombre de usuario");
 
-        lblFotoPerfil.setToolTipText(
-                "Cambiar imagen de perfil");
+    lblUsuario.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    28));
 
-        panelPerfil.add(lblFotoPerfil);
+    lblUsuario.setBounds(
+            180,
+            370,
+            300,
+            40);
 
-        lblUsuario = new JLabel(
-                "Nombre de usuario");
+    panelPerfil.add(lblUsuario);
 
-        lblUsuario.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        20));
 
-        lblUsuario.setBounds(
-                125,
-                265,
-                220,
-                30);
+    btnEditarNombre = new JButton(
+            "EDITAR NOMBRE");
 
-        panelPerfil.add(lblUsuario);
+    btnEditarNombre.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    20));
 
+    btnEditarNombre.setBounds(
+            180,
+            430,
+            280,
+            60);
 
-        btnEditarNombre
-                = new JButton(
-                        "EDITAR NOMBRE");
+    panelPerfil.add(btnEditarNombre);
 
-        btnEditarNombre.setBounds(
-                115,
-                330,
-                200,
-                45);
 
-        panelPerfil.add(btnEditarNombre);
+    JLabel lblImagenActual
+            = new JLabel(
+                    "Imagen seleccionada actualmente");
 
+    lblImagenActual.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    18));
 
-        JLabel lblImagenActual
-                = new JLabel(
-                        "Imagen seleccionada actualmente");
+    lblImagenActual.setBounds(
+            150,
+            530,
+            320,
+            30);
 
-        lblImagenActual.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        14));
+    panelPerfil.add(lblImagenActual);
 
-        lblImagenActual.setBounds(
-                100,
-                400,
-                250,
-                20);
+    JPanel panelImagenes
+            = new JPanel();
 
-        panelPerfil.add(lblImagenActual);
+    panelImagenes.setPreferredSize(
+            new java.awt.Dimension(
+                    450,
+                    350));
 
-        JPanel panelImagenes
-                = new JPanel();
+    scrollImagenes
+            = new JScrollPane(
+                    panelImagenes);
 
-        panelImagenes.setPreferredSize(
-                new java.awt.Dimension(
-                        300,
-                        250));
+    scrollImagenes.setBounds(
+            100,
+            580,
+            450,
+            250);
 
-        scrollImagenes
-                = new JScrollPane(
-                        panelImagenes);
+    panelPerfil.add(scrollImagenes);
 
-        scrollImagenes.setBounds(
-                75,
-                450,
-                300,
-                250);
+    btnVolver = new JButton(
+            "VOLVER");
 
-        panelPerfil.add(scrollImagenes);
+    btnVolver.setFont(
+            new Font(
+                    "Arial",
+                    Font.BOLD,
+                    26));
 
-        btnVolver = new JButton(
-                "Volver");
+    btnVolver.setBounds(
+            450,
+            860,
+            220,
+            60);
 
-        btnVolver.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        22));
-
-        btnVolver.setBounds(
-                330,
-                580,
-                160,
-                50);
-
-        fondo.add(btnVolver);
+    fondo.add(btnVolver);
     }
 
     public static void main(String[] args) {
